@@ -1,0 +1,26 @@
+node {
+    stage('GitCheckout') {
+        git 'https://github.com/spoorthigowda2309/DevopsMindtreeWorkspace.git'
+    }
+
+    def project_path = "01-Jenkins/petclinic-code"
+    dir(project_path) {
+
+    stage('Maven Clean') {
+        sh 'mvn clean'
+    }
+    stage('Maven Compile') {
+        sh 'mvn compile'
+    }
+    stage('Maven test') {
+        sh 'mvn test'
+    }
+    stage('Maven package') {
+        sh 'mvn package'
+    }
+    stage('Artifacts') {
+        archiveArtifacts artifacts: 'target/*.war', followSymlinks: false
+    }
+    
+}
+}
