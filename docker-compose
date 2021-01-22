@@ -5,7 +5,7 @@ node {
 
 stage('GitCheckOut') {
 
-git branch: 'main', credentialsId: '01', url: 'https://github.com/spoorthigowda2309/DevopsMindtreeWorkspace.git'
+git branch: 'master', credentialsId: '01', url: 'https://github.com/spoorthigowda2309/DevopsMindtreeWorkspace.git'
 
 }
 
